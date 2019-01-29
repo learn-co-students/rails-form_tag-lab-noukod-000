@@ -1,0 +1,17 @@
+  <!-- <%= form_tag students_path do %>
+  <label>Student Form:</label><br>
+  <%= text_field_tag :'student[first_name]' %><br>
+  <%= text_field_tag :'student[last_name]' %><br>
+
+  <%= submit_tag "Submit Post" %>
+<% end %> -->
+<form action="<%= students_path %>" method="POST">
+  <label>Student Form:</label><br>
+  <input type="text" id="student_first_name" name="first_name[student][first_name]"><br>
+  <input type="text" id="student_last_name" name=""><br>
+  <!-- <label>Post description:</label><br>
+  <textarea id="post_description" name="post[description]"></textarea><br>
+  -->
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="submit" value="Submit Post">
+</form>
